@@ -1,3 +1,2 @@
 #!/bin/bash
-find ./* -type d -exec chmod -R ugo+x {} \;
-
+chmod a+x */
