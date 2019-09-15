@@ -1,2 +1,0 @@
-#!/bin/bash
-find. -iname \*.gif -type f -printf "%f\n" |lc_collate=c sort --ignore-case |rev |cut -c 5- |rev
