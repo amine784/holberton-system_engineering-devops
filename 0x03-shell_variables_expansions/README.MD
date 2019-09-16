@@ -1,1 +1,0 @@
-shell init files,variables ans expansions
