@@ -1,2 +1,2 @@
 #!/bin/bash
-echo ((NUM=%0.2f\n"))
+echo (("NUM=%0.2f\n"))
