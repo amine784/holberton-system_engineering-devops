@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#a Bash script that displays Holberton School 10 times using until
+c=0
+until [ $c == 10 ]
+do
+if ((c ==9))
+then
+    echo "Hi"
+fi
+    echo "Holberton School"
+    
+    ((c++))
+done
