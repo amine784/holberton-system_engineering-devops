@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#a Bash script that displays Holberton School 10 times using until
+c=1
+while (( c < 11 ))
+do
+    if ((c ==4))
+       then
+    echo "bad luck"
+    elif ((c ==8))
+	 then
+    echo "good luck"
+else
+    echo "Holberton School"
+fi
+     (( c++ ))
+done
