@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#a Bash script that displays Holberton School 10 times using until
+c=1
+while (( c < 21 ))
+do
+echo $c
+case $c in
+4)
+echo "bad luck from China"
+;;
+9)
+echo "bad luck from Japan"
+;;
+17)
+echo "bad luck from Italy"
+;;
+esac
+((c++))
+done
