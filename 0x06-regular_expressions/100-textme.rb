@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-print ARGV[0].scan(/\[from:(.*?)\]/),
-      ARGV[0].scan(/\[to:(.*?)\]/),
-      ARGV[0].scan(/\[flags:(.*?)\]/).join
-print(",")
+print ARGV[0].scan(/\[from:(.*?)\]/).join(",")
+ARGV[0].scan(/\[to:(.*?)\]/).join(",")
+ARGV[0].scan(/\[flags:(.*?)\]/).join(",")
 
