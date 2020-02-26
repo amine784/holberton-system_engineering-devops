@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-reg = "(.*?)\"
+reg = (.*?)\
 puts ARGV[0].scan(/\[from:reg] \[to:reg] \[flags:reg]/).join(",")
 
 
