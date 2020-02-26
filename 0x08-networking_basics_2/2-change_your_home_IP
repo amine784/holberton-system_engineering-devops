@@ -2,5 +2,5 @@
 #script bash
 cp /etc/hosts ~/servtmp
 sed -i s/127.0.01/127.0.0.2/ ~/servtmp
-echo "8.8.8.8       facebook.com" >> ~/servtmp
+echo "8.8.8.8 facebook.com" >> ~/servtmp
 cp -f ~/servtmp /etc/hosts
