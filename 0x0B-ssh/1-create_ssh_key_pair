@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ssh-keygen -f holberton -N passphrase -b 4096
