@@ -1,5 +1,5 @@
 # ssh confifuration
-exec { 'echo -e "IdentityFile ~/ssh/holberton" >> /etc/ssh/ssh_config':
+exec { 'echo -e "Id_File ~/ssh/holberton\n" >> /etc/ssh/ssh_config':
 provider => shell,
-command  => 'echo -e "PasswordAuthentication no" >> /etc/ssh/ssh_config',
+command  => 'echo -e "Pass_Auth no\n" >> /etc/ssh/ssh_config',
 }
