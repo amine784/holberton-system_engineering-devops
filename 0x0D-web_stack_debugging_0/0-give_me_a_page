@@ -2,4 +2,5 @@
 # install apache
 apt-get install apache2 -y
 echo "Hello Holberton" > /var/www/html/index.html
+echo "ServerName localhost" >> /etc/apache2.conf
 sudo service apache2 start
