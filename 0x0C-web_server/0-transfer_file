@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # script that transfert file from client to server
-user = "$3"
-ip_server = "$2"
-f_path = "$1"
-root = "$user@$ip_server"
-if[ "s#' -lt 3];
+user=$3
+ip_server=$2
+f_path=$1
+root=$user@$ip_server
+if [ $# -lt 3 ];
 then
 echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
