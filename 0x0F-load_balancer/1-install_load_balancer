@@ -9,6 +9,6 @@ echo "front webservers
      default_backend webservers" >> /etc/haproxy/haproxy.cfg
 echo "backend webservers
       balance roundrobin
-      server gc-1066-web-01-1585061673 34.73.0.225:80 check
+      server 1066-web-01-1585061673 34.73.0.225:80 check
       server 1066-web-02 35.229.78.70:80 check" >> /etc/haproxy/haproxy.cfg
       sudo service haproxy restart
