@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # rt
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-sed -i 's/8080/80/g' /etc/nginx/sites-available/default
+pkill -o nginx
 sudo service nginx restart
