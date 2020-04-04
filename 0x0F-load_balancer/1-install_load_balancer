@@ -1,14 +1,11 @@
 #!/usr/bin/env bash                                                          
-# Install haproxy
-sudo apt-get update
-sudo apt-get -y install haproxy
-echo "front webservers
-     bind *:80
-     mode http
-     log global
-     default_backend webservers" >> /etc/haproxy/haproxy.cfg
-echo "backend webservers
-      balance roundrobin
-      server 1066-web-01 34.73.0.225:80 check
-      server 1066-web-02 35.229.78.70:80 check" >> /etc/haproxy/haproxy.cfg
-      sudo service haproxy restart
+# Install haproxysudo apt-get update        
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+apt-get -y install haproxy
+service haproxy start
+echo -e "listen 1066-lb-01\n\tbind *:80\n\tstats enable\n\tbalance roundrobin\n\
+\tserver 1066-web-01 34.73.0.225:80 check\n\tserver 1066-web-02 35.229.78.70:80\
+ check" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
+
