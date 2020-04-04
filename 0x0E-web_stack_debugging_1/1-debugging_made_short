@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # rt
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-pkill -SIGKILL -f "/usr/sbin/nginx"
 sudo service nginx restart
+pkill -SIGKILL -f "/usr/sbin/nginx"
