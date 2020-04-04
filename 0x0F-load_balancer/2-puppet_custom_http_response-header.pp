@@ -6,7 +6,7 @@ command  => 'sudo apt-get -y update ',
 }
 exec {'config new serv':
 provider => shell,
-command  => '"Holberton School" | sudo tee /var/www/html/index.nginx-debian.html',
+command  => "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html,
 }
 exec {'restart':
 provider => shell,
