@@ -2,4 +2,4 @@
 # rt
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sudo service nginx restart
-pkill -f "/usr/sbin/nginx"
+pkill -f -SIGKILL /usr/sbin/nginx
