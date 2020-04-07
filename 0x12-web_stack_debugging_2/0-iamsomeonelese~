@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# execute as superuser
-sudo -u whomi $1 
