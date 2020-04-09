@@ -5,7 +5,7 @@ sub_d="$2"
 fi
 for sub in $sub_d
 do
-c=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION": | tail -1 | awk '{print $4}')
-i=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION": | tail -1 | awk '{print $5}')
+c=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $4}')
+i=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $5}')
 echo "The subdomain $sub is $c record and points to $i" 
 done
