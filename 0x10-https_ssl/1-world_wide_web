@@ -14,3 +14,4 @@ echo "The subdomain $sub is a $c record and points to $i"
 }
 printer $sub $c $i
 done
+
