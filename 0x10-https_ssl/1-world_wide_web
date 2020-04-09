@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
+# function to display sub domain
 sub_d="www lb-01 web-01 web-02"
 if [ "$#" -eq 2 ]; then
 sub_d="$2"
 fi
+printer()
+{
 for sub in $sub_d
 do
 c=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $4}')
 i=$(dig "$sub"."$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $5}')
 echo "The subdomain $sub is $c record and points to $i" 
 done
+}
