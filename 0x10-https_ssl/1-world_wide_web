@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 sub_d="www lb-01 web-01 web-02"
-if [ "$#" -eq 2 ]
-then
+if [ "$#" -eq 2 ]; then
 sub_d="$2"
 fi
 for sub in $sub_d
