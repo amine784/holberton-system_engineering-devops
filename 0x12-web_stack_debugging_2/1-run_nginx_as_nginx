@@ -2,4 +2,5 @@
 # execute as nginx usr
 chmod u+rw /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
-sudo -u nginx service nginx start
+sudo -u nginx service nginx restart
+pkill apache2
