@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # same  then last tsk
 pkill apache2
-chmod +rw+r+r /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
+sudo -u nginx service nginx restart
