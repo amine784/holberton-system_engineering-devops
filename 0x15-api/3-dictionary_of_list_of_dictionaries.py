@@ -3,24 +3,22 @@
 from sys import argv
 import json
 import requests as req
+from requests import get
 if __name__ == "__main__":
     title = "todo_all_employees.json"
-    q = req.get("{}users".format(
-        "https://jsonplaceholder.typicode.com/"))
-    q = q.json()
-    d = []
-    for data in q:
-        Id = data.get('id')
-        query = req.get("{}todos".format(
-            "https://jsonplaceholder.typicode.com/"),
-                        params={"userId": Id})
-        query = query.json()
-        n = data.get("username")
-        for r in query:
-            z = {}
-            z['task'] = r.get('title')
-            z['completed'] = r.get('completed')
-            z['username'] = n
-            d.append(z)
-        with open(title, "w") as json_f:
-            json.dump({Id: d}, json_f)
+    data = {}
+    url = "https://jsonplaceholder.typicode.com/"
+    users = get(url + "users").json()
+    for user in users:
+        Id = user.get("id")
+        list = []
+        tasks = get(url + "todos?userId={}".format(Id)).json()
+        for rep in tasks:
+            dic = {}
+            dic["username"] = user.get("username")
+            dic["task"] = rep.get("title")
+            dic["completed"] = rep.get("completed")
+            list.append(dic)
+        data[Id] = list
+    with open(title, 'w') as json_file:
+        json.dump(data, json_file)
