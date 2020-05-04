@@ -7,17 +7,20 @@ if __name__ == "__main__":
     title = "todo_all_employees.json"
     data = {}
     url = "https://jsonplaceholder.typicode.com/"
-    users = req.get("{}users".format(
-        "https://jsonplaceholder.typicode.com/")).json()
-    for user in users:
-        Id = user.get("id")
+    rs = req.get("{}users".format(
+        "https://jsonplaceholder.typicode.com/"))
+    rs = rs.json()
+    for userid in rs:
+        Id = userid.get("id")
         list = []
-        tasks = req.get("{}todos".format(
+        t = req.get("{}todos".format(
                 "https://jsonplaceholder.typicode.com/"),
-                            params={"userId": Id}).json()
-        for rep in tasks:
+                            params={"userId": Id})
+        t = t.json()
+        name = userid.get("username")
+        for rep in t:
             dic = {}
-            dic["username"] = user.get("username")
+            dic["username"] = name
             dic["task"] = rep.get("title")
             dic["completed"] = rep.get("completed")
             list.append(dic)
