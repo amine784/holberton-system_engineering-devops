@@ -15,9 +15,9 @@ if __name__ == "__main__":
     d = []
     for task in query:
         data = {}
-        data['username'] = n,
+        data['task'] = task.get('title'),
         data['completed'] = task.get('completed'),
-        data['task'] = task.get('title')
+        data['username'] = n
         d.append(data)
     with open("{}.json".format(argv[1]), "w", newline="") as json_f:
         json.dump({argv[1]: d}, json_f)
