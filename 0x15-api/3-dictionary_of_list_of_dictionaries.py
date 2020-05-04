@@ -3,16 +3,18 @@
 from sys import argv
 import json
 import requests as req
-from requests import get
 if __name__ == "__main__":
     title = "todo_all_employees.json"
     data = {}
     url = "https://jsonplaceholder.typicode.com/"
-    users = get(url + "users").json()
+    users = req.get("{}users".format(
+        "https://jsonplaceholder.typicode.com/")).json()
     for user in users:
         Id = user.get("id")
         list = []
-        tasks = get(url + "todos?userId={}".format(Id)).json()
+        tasks = req.get("{}todos".format(
+                "https://jsonplaceholder.typicode.com/"),
+                            params={"userId": Id}).json()
         for rep in tasks:
             dic = {}
             dic["username"] = user.get("username")
