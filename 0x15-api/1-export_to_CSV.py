@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""python script"""
 from sys import argv
 import csv
 import requests as req
@@ -9,7 +10,7 @@ if __name__ == "__main__":
         "https://jsonplaceholder.typicode.com/"), params={"userId": argv[1]})
     q = q.json()
     query = query.json()
-    n = q.get("name")
+    n = q.get("username")
     count = len(query)
     done = 0
     header = []
