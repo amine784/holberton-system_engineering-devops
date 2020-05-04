@@ -5,7 +5,7 @@ import json
 import requests as req
 if __name__ == "__main__":
     title = "todo_all_employees.json"
-    data = {}
+    ret = {}
     url = "https://jsonplaceholder.typicode.com/"
     rs = req.get("{}users".format(
         "https://jsonplaceholder.typicode.com/"))
@@ -24,6 +24,6 @@ if __name__ == "__main__":
             dic["task"] = rep.get("title")
             dic["completed"] = rep.get("completed")
             list.append(dic)
-        data[Id] = list
-    with open(title, 'w') as json_file:
-        json.dump(data, json_file)
+        ret[Id] = list
+    with open(title, 'w') as jason:
+        json.dump(ret, jason)
