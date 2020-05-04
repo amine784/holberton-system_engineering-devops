@@ -4,9 +4,8 @@ from sys import argv
 import json
 import requests as req
 if __name__ == "__main__":
-    title = "todo_all_employees.json"
     ret = {}
-    url = "https://jsonplaceholder.typicode.com/"
+    title = "todo_all_employees.json"
     rs = req.get("{}users".format(
         "https://jsonplaceholder.typicode.com/"))
     rs = rs.json()
