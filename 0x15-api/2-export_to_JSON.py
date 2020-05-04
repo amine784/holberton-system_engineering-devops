@@ -13,10 +13,10 @@ if __name__ == "__main__":
     query = query.json()
     n = q.get("username")
     d = []
-    for task in query:
+    for r in query:
         data = {}
-        data['task'] = task.get('title'),
-        data['completed'] = task.get('completed'),
+        data['task'] = r.get('title')
+        data['completed'] = r.get('completed')
         data['username'] = n
         d.append(data)
     with open("{}.json".format(argv[1]), "w", newline="") as json_f:
