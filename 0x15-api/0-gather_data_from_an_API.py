@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from sys import argv
+"""python script"""
 import requests as req
+from sys import argv
 q = req.get("{}users/{}".format(
     "https://jsonplaceholder.typicode.com/", argv[1]))
 query = req.get("{}todos".format(
@@ -15,7 +16,7 @@ for dt in query:
     if dt.get("completed") is True:
         done += 1
         header.append(dt["title"])
-print(f"Employee {n} is done with tasks {done}/{count}:")
+print(f"Employee {n} is done with tasks({done}/{count}):")
 for title in header:
     print("\t {}".format(title))
 if __name__ == "__main__":
