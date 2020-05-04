@@ -23,4 +23,4 @@ if __name__ == "__main__":
             dic['complited'] = dt.get('completed')
             dic['task'] = dt.get('title')
             d.append(dic)
-        json.dump({argv[1]: dic}, json_f)
+        json.dump({argv[1]: d}, json_f)
