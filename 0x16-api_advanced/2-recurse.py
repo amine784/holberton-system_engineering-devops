@@ -11,7 +11,8 @@ def recurse(subreddit, hot_list=[], after=None):
         return(None)
     request_data = requestpost.json()
     st = request_data["data"]["after"]
-    for c in request_data["data"]["children"]:
+    child = request_data["data"]["children"]
+    for c in child:
         hot_list.append(c["data"]["title"])
     if st is not None:
         recurse(subreddit, hot_list, st)
