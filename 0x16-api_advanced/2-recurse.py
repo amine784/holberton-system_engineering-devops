@@ -9,11 +9,10 @@ def recurse(subreddit, hot_list=[], after=None):
         subreddit), headers={"User-Agent": "amine"}, params={"after": after})
     if requestpost.status_code != 200:
         return(None)
-    response_data = requestpost.json()
-    for c in response_data["data"]["children"]:
+    request_data = requestpost.json()
+    for c in request_data["data"]["children"]:
         hot_list.append(c["data"]["title"])
-    st = response_data["data"]["after"]
-    if st:
-        return(hot_list)
-    else:
-        return(recurse(subreddit, hot_list, st))
+    st = request_data["data"]["after"]
+    if st is not None:
+        recurse(subreddit, hot_list, st)
+    return(hot_list)
