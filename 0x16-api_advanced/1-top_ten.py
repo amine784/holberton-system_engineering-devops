@@ -5,12 +5,11 @@ import requests
 
 def top_ten(subreddit):
     '''function to check nbre of sub'''
-    headers = {"User-Agent": "amine"}
     requestpost = requests.get("https://www.reddit.com/r/{}/hot.json".format(
-        subreddit), headers=headers, params={"limit": 10})
+        subreddit), headers={"User-Agent": "amine"})
     if requestpost.status_code == 404:
         print("None")
     else:
         response_data = requestpost.json()
-        for data in response_data["data"]["children"]:
+        for data in response_data["data"]["children"][:10]:
             print(data["data"]["title"])
