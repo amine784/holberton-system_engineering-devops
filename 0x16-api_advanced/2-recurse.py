@@ -10,9 +10,9 @@ def recurse(subreddit, hot_list=[], after=None):
     if requestpost.status_code != 200:
         return(None)
     request_data = requestpost.json()
+    st = request_data["data"]["after"]
     for c in request_data["data"]["children"]:
         hot_list.append(c["data"]["title"])
-    st = request_data["data"]["after"]
     if st is not None:
         recurse(subreddit, hot_list, st)
     return(hot_list)
